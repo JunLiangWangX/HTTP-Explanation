@@ -12,7 +12,7 @@ export default defineConfig({
   head: [
     [
       'link',
-      { rel: 'icon', href: './.vitepress/assets/logo.svg'}
+      { rel: 'icon', href: '/logo.svg'}
     ]
   ],
   themeConfig: {
