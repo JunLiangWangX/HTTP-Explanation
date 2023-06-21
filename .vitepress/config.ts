@@ -8,6 +8,7 @@ export default defineConfig({
   base: '/HTTP-Explanation/',
   srcExclude: ['**/README.md', '**/TODO.md'],
   outDir: './public',
+  srcDir: 'src',
   lastUpdated:true,
   head: [
     [
