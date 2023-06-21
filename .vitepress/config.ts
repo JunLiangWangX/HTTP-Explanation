@@ -2,10 +2,10 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  // title: "HTTP完全注释",
+  title: "HTTP完全注释",
   description: "HTTP完全注释",
   lang:"zh-CN",
-  // base: '/HTTP-Comment/',
+  base: '/HTTP-Explanation/',
   srcExclude: ['**/README.md', '**/TODO.md'],
   outDir: './public',
   lastUpdated:true,
@@ -29,7 +29,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/JunLiangWangX/HTTP-Explanation/' }
+      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ]
   }
 })
