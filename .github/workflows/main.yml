@@ -1,0 +1,39 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+            node-version: 18.x
+      - run: npm i
+      - run: npm run docs:build --if-present
+      
+      - if: ${{ github.event_name == 'push' && success() }}
+        name: Publish HTML to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.SECRET }}
+          publish_dir: ./public
+          enable_jekyll: false
+          
+      - if: ${{ github.event_name == 'push' && success() }}
+        name: deploy file to server
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4 
+        with:  
+          username: 'root'
+          server: '${{ secrets.SERVER_IP }}'
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} # 引用之前创建好的secret
+          local_path: './public/*'
+          remote_path: '/home/www/htdocs/wangjunliang/HTTP-Explanation'
