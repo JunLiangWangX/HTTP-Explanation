@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /markdown-examples
+      link: /connection
     - theme: alt
       text: 访问Github
       link: https://github.com/JunLiangWangX/HTTP-Explanation/

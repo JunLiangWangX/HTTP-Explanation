@@ -18,7 +18,7 @@ export default defineConfig({
   ],
   themeConfig: {
     // logo:'./.vitepress/assets/logo.svg',
-    siteTitle:'HTTP完全注解',
+    siteTitle:'HTTP完全注释',
     lastUpdatedText:'最后更新',
     darkModeSwitchLabel:'切换模式',
     sidebarMenuLabel:"菜单",
@@ -26,6 +26,7 @@ export default defineConfig({
       prev: '上一页',
       next: '下一页'
     },
+    outline:'deep',
     returnToTopLabel:'返回顶部',
     langMenuLabel:'切换语言',
     outlineTitle:'目录',
@@ -35,10 +36,9 @@ export default defineConfig({
     },
     sidebar: [
       {
-        text: 'Examples',
+        text: '请求头',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Connection', link: '/connection' }
         ]
       }
     ],
