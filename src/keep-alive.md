@@ -29,3 +29,18 @@
 Keep-Alive: timeout=5, max=1000
 ```
 
+
+
+
+
+
+
+::: details  🎈本节参考
+
+\-  https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Keep-Alive
+
+ :::
+
+
+
+转载需要经过本人同意！
