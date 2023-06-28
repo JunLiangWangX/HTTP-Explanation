@@ -62,7 +62,8 @@ export default defineConfig({
       {
         text: '请求头',
         items: [
-          { text: 'Connection', link: '/connection' }
+          { text: 'Connection', link: '/connection' },
+          { text: 'Keep-Alive', link: '/keep-alive' }
         ]
       }
     ],
