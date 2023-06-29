@@ -1,7 +1,14 @@
 import { defineConfig } from 'vitepress'
+import { withPwa } from '@vite-pwa/vitepress'
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default withPwa(defineConfig({
+  vite: {
+    logLevel: 'info',
+    define: {
+      __DATE__: `'${new Date().toISOString()}'`,
+    },
+  },
   title: "HTTP完全注释",
   description: "HTTP完全注释",
   lang: "zh-CN",
@@ -71,5 +78,53 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/JunLiangWangX/HTTP-Explanation/' }
     ]
+  },
+  /* Vite PWA Options */ 
+  pwa: {
+    mode: 'development',
+    base: '/',
+    scope: '/',
+    includeAssets: ['logo.svg'],
+    manifest: {
+      name: 'HTTP完全注释',
+      short_name: 'HTTP完全注释',
+      description: "一份全面、集中、准确的HTTP完全注解",  //描述
+      theme_color: '#ffffff',
+      icons: [
+        {
+          src: 'logo.svg',
+          sizes: '32x32',
+          type: 'image/png',
+        },
+        {
+          src: 'logo-64.svg',
+          sizes: '64x64',
+          type: 'image/png',
+        },
+        {
+          src: 'logo-128.svg',
+          sizes: '128x128',
+          type: 'image/png',
+        },
+        {
+          src: 'logo-256.svg',
+          sizes: '256x256',
+          type: 'image/png',
+        },
+        {
+          src: 'logo-512.svg',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+      ],
+    },
+    workbox: {
+      globPatterns: ['**/*.{css,js,html,svg,png,ico,txt,woff2}'],
+    },
+    devOptions: {
+      enabled: true,
+      suppressWarnings: true,
+      navigateFallback: '/',
+    },
   }
-})
+}))
