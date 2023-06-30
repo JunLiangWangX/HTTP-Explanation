@@ -85,7 +85,8 @@ export default withPwa(defineConfig({
   },
   /* Vite PWA Options */ 
   pwa: {
-    mode: 'development',
+    outDir: './public',
+    srcDir: 'src',
     base: '/HTTP-Explanation/',
     scope: '/',
     includeAssets: ['logo.svg'],
