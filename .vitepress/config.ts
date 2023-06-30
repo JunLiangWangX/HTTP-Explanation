@@ -88,7 +88,7 @@ export default withPwa(defineConfig({
     outDir: './public',
     srcDir: 'src',
     base: '/HTTP-Explanation/',
-    scope: '/',
+    scope: '/HTTP-Explanation/',
     includeAssets: ['logo.svg'],
     manifest: {
       name: 'HTTP完全注释',
