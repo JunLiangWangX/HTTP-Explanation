@@ -66,10 +66,18 @@ export default withPwa(defineConfig({
       copyright: 'Copyright © 2023-present JunLiangWang'
     },
     editLink: {
-      text:"在Github编辑此页",
+      text: "在Github编辑此页",
       pattern: 'https://github.com/JunLiangWangX/HTTP-Explanation/edit/main/src/:path'
     },
     sidebar: [
+      {
+        text: '概述',
+        items: [
+          {
+            text: 'HTTP的历史', link: '/docs/overview/the-history-of-http'
+          }
+        ]
+      },
       {
         text: '请求头',
         items: [
@@ -83,7 +91,7 @@ export default withPwa(defineConfig({
       { icon: 'github', link: 'https://github.com/JunLiangWangX/HTTP-Explanation/' }
     ]
   },
-  /* Vite PWA Options */ 
+  /* Vite PWA Options */
   pwa: {
     outDir: './public',
     srcDir: 'src',
