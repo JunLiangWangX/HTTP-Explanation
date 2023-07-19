@@ -69,6 +69,9 @@ export default withPwa(defineConfig({
       text: "在Github编辑此页",
       pattern: 'https://github.com/JunLiangWangX/HTTP-Explanation/edit/main/src/:path'
     },
+    nav: [
+      { text: '支持作者', link: '/support' }
+    ],
     sidebar: [
       {
         text: '概述',
