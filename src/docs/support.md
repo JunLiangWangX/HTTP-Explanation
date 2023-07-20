@@ -12,4 +12,4 @@ aside: false
 
 |                    支付宝                     |                       微信                       |
 | :-------------------------------------------: | :----------------------------------------------: |
-| <img src="./public/alipay.svg" width='100%'/> | <img src="./public/wechatpay.svg" width='100%'/> |
+| <img src="../public/alipay.svg" width='100%'/> | <img src="../public/wechatpay.svg" width='100%'/> |
