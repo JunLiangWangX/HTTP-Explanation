@@ -159,6 +159,93 @@ strict-origin-when-cross-origin
 
 
 
+## HTTP/1.1——标准化的协议(1997)
+
+HTTP/1.0 多种不同的实现方式在实际运用中显得有些混乱。自 1995 年开始，即 HTTP/1.0 文档发布的下一年，就开始修订 HTTP 的第一个标准化版本。 在 1997 年 1 月HTTP1.1 标准以 [RFC 2068](https://datatracker.ietf.org/doc/html/rfc2068) 文件发布，后续 HTTP/1.1 协议进行过两次修订，分别是[RFC 2616](https://datatracker.ietf.org/doc/html/rfc2616) 发布于 1999 年 6 月，以及 [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230)-[RFC 7235](https://datatracker.ietf.org/doc/html/rfc7235) 发布于 2014 年 6 月。
+
+HTTP/1.1 标准消除了早期版本中大量歧义内容，并引入了许多关于性能优化的措施：持久链接、管道化技术、支持范围请求和部分响应、分块传输机制、明确缓存控制机制、增加压缩技术、增强内容协商机制、增加客户端cookie等。除了改进HTTP性能方面HTTP/1.1还新增状态码、引入了基本认证和摘要认证，提供更强大的用户认证机制，确保更安全的通信、 引入了 Host 头字段，该字段允许在同一个物理服务器上托管多个域名。这使得虚拟主机能够通过在 Host 头中指定域名来区分不同的网站、并且它还新增了许多请求方法，极大丰富了请求类型。
+
+> 以下为HTTP/1.1的请求示例
+
+```http
+GET /zh-CN/docs/Glossary/Simple_header HTTP/1.1
+Host: developer.mozilla.org
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:50.0) Gecko/20100101 Firefox/50.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: https://developer.mozilla.org/zh-CN/docs/Glossary/Simple_header
+```
+
+> 以下为HTTP/1.1的响应示例
+
+```http
+200 OK
+Connection: Keep-Alive
+Content-Encoding: gzip
+Content-Type: text/html; charset=utf-8
+Date: Wed, 20 Jul 2016 10:55:30 GMT
+Etag: "547fa7e369ef56031dd3bff2ace9fc0832eb251a"
+Keep-Alive: timeout=5, max=1000
+Last-Modified: Tue, 19 Jul 2016 00:59:33 GMT
+Server: Apache
+Transfer-Encoding: chunked
+Vary: Cookie, Accept-Encoding
+```
+
+我们可以看到在请求/响应格式上HTTP/1.1与HTTP/1.0并无差异，这是因为HTTP/1.1沿用了HTTP/1.0的请求/响应格式。
+
+### 特性
+
+- **持久化连接：** 在HTTP/1.0中持久连接默认为关闭，并没有得到广泛应用，而在HTTP/1.1中连接默认情况下不会关闭，而是保持打开状态，从而允许多个顺序请求。要关闭连接，请求头 Connection: close 必须可用。客户端通常在最后一个请求中发送此标头以安全地关闭连接。
+- **管道化技术：** HTTP/1.1引入了管道化技术，以解决请求阻塞问题，客户端可以在同一连接上向服务器发送多个请求，而无需等待服务器的响应，并且服务器必须按照接收请求的顺序发送响应。
+- **新增客户端Cookie：** 由于HTTP是无状态协议，当客户端需要记录状态时，必须发送一些记录状态的冗余数据，从而导致带宽使用量增加。HTTP/1.1引入了客户端cookie以解决该问题，通过在浏览器中设置cookie，服务器可以跟踪用户会话状态，实现用户身份认证，个性化用户体验等。
+- **新增Gzip、Deflate等压缩技术：** 在HTTP/1.1中，服务器可以使用Gzip、Deflate等压缩算法来压缩HTTP响应的实体主体部分（如HTML、CSS、JavaScript等），然后在响应头中使用"Content-Encoding"字段来指示客户端该响应已经被压缩以及压缩的算法。客户端收到压缩的响应后，会自动解压缩以获取原始内容。
+- **引入了基本认证和摘要认证机制：** 在HTTP/1.1中，可以通过基本认证和摘要认证机制，在请求头中传递用户名和密码等凭据进行用户身份验证。
+- **引入了范围请求和部分响应机制：** HTTP/1.1引入了范围请求和部分响应的功能，通过在HTTP请求头中使用"Range"字段指定所需的资源范围，而服务器在响应头中使用"206 Partial Content"状态码表明返回的是部分响应，并通过"Content-Range"字段指示返回内容的字节范围。这使得客户端可以请求大文件的特定部分，例如断点续传的情况下，从而避免重新下载整个文件。此外，范围请求还能让客户端只获取媒体资源的特定片段，优化数据传输并提升用户体验。
+- **引入了分块传输机制：** HTTP/1.1引入了分块传输（Chunked Transfer Encoding）机制，用于在动态内容传输时，服务器无法提前确定整个内容的长度的情况下，逐块发送内容。在分块传输中，服务器将响应拆分为一系列块，每个块都有一个独立的大小，并使用"Transfer-Encoding: chunked"请求头来通知客户端有关分块传输的信息。客户端接收到该头信息后，知道响应将以分块的形式传输，它可以按照指定的块大小逐块接收内容，直到接收到一个长度为零的块，表示传输已完成。这种机制适用于动态生成内容、流式传输以及服务器长时间运行的响应等场景，提供了更灵活和高效的数据传输方式。
+- **明确缓存机制：** HTTP/1.1在HTTP/1.0的基础上进一步明确了缓存机制，服务器可以通过设置响应头字段来控制缓存行为，例如使用"Cache-Control"头字段来指定缓存策略，如"max-age"用于设置资源的最大缓存时间，"no-cache"用于要求客户端验证资源的有效性等。同时，服务器也可以在响应头中添加"Expires"头字段，设置资源的过期时间，以便客户端在接收到资源后在过期时间之前可以直接使用缓存的副本。另外，HTTP/1.1还支持"Last-Modified"和"If-Modified-Since"头字段，以及"ETag"和"If-None-Match"头字段，用于在客户端缓存资源后，再次请求时验证资源是否已经发生变化，如果未变化，服务器返回304 Not Modified状态码，让客户端使用缓存的资源，从而避免重复传输。通过这些头字段的灵活组合使用，HTTP/1.1的缓存机制实现了更高效、可控的缓存管理，优化了Web应用程序的性能和用户体验。
+- **增强内容协商机制：** HTTP/1.1增加了Accept-Language、Accept-Encoding和Accept-Charset等头字段，允许客户端明确指定其首选语言、内容编码方式和字符集，让服务器能够更好地提供适配客户端需求的内容。此外，HTTP/1.1还引入了Vary头字段，用于标明服务器响应可能因客户端请求头的不同而变化，这样确保代理服务器能够存储和提供正确的缓存内容。这些改进使得HTTP/1.1的内容协商机制更加强大和智能，提高了资源传输的效率和用户体验。
+
+- **添加了新的 HTTP 方法：** HTTP/1.1新增了 PUT、PATCH、OPTIONS、DELETE方法。
+- **新增了Host 头字段：** TTP/1.1 引入了 Host 头字段，该字段允许在同一个物理服务器上托管多个域名。这使得虚拟主机能够通过在 Host 头中指定域名来区分不同的网站。
+- **新增了状态码** 
+
+### 缺陷
+
+- **线头阻塞（Head-of-Line Blocking）：** HTTP/1.1在同一连接上使用持久连接，但由于串行发送请求和响应，如果一个请求或响应的处理时间较长，那么后续的请求和响应将被阻塞，为此它引入了管道化技术(pipelining)试图解决该问题，但它并没有完全解决这个问题，因为即使在客户端请求选择某一管道并被异步发送出去，但在服务器如果该请求前面存在缓慢或繁重的请求，那么该请求就会被阻塞。这种情况也被称为线头阻塞
+- **无法处理较多的并发请求：** 由于头阻塞问题和单个连接的限制，HTTP/1.1在处理较多的并发请求时表现较差。浏览器限制了同时与同一域名建立的连接数，从而限制了并发请求的数量。
+- **明文传输：** HTTP/1.1默认是明文传输，数据在网络上传输时不加密，可能被窃听或篡改。这会导致安全隐患，尤其是对于敏感信息的传输。
+- **头部冗余：** HTTP/1.1的请求和响应头部会携带一些冗余的信息，导致了较大的头部开销，特别是对于小的资源请求。
+- **没有对头字段进行压缩：** HTTP/1.1没有对头字段进行压缩，尽管HTTP响应的主体可以使用Gzip等压缩算法，但头字段仍然是明文传输，可能在一些情况下浪费带宽。
+- **请求-响应模式：** HTTP/1.1使用请求-响应模式，每个请求需要等待响应后才能继续。这种模式对于实时性要求较高的应用场景，如实时通信和流媒体，效率较低。
+- **缺乏推送功能：** HTTP/1.1缺乏服务器主动向客户端推送资源的机制。客户端只能通过不断发送请求来获取资源，这导致了一定的延迟和额外的开销。
+
+###  超过 25 年的逐步扩展
+
+从HTTP/1.1协议发布至今，HTTP/1.1协议已稳定使用超过25年，目前大部分网站仍是基于HTTP/1.1来运行的。这期间HTTP/1.1也做了多次扩展与修改，并发展不同的应用模式，以弥补之前的缺陷以及满足日益进步的需求。
+
+
+
+#### HTTP 用于安全传输
+
+ 在1994年，网景通信公司（Netscape Communications Corporation）为了解决当时互联网上数据传输的安全问题，发布了第一个安全套接字层（Secure Sockets Layer，SSL）协议。SSL协议使用了加密技术，对HTTP的数据进行加密传输，保护数据的安全性。
+
+在SSL协议的基础上，网景通信公司将安全传输的功能整合到HTTP协议中，形成了HTTPS协议。HTTPS使用了SSL/TLS（Transport Layer Security）协议来加密HTTP传输过程中的数据，使得网站和用户之间的通信不再以明文传输，变得安全。
+
+
+
+#### HTTP 用于复杂应用
+
+在 2000 年，一种新的使用 HTTP 的模式被设计出来：[具象状态传输（representational state transfer）](https://developer.mozilla.org/zh-CN/docs/Glossary/REST) (或者说 REST)。由 API 发起的操作不再通过新的 HTTP 方法传达，而只能通过使用基本的 HTTP / 1.1 方法访问特定的 URI。这允许任何 Web 应用程序通过提供 API 以允许查看和修改其数据，而无需更新浏览器或服务器。所有需要的内容都被嵌入到由网站通过标准 HTTP/1.1 提供的文件中。REST 模型的缺点在于每个网站都定义了自己的非标准 RESTful API，并对其进行了全面的控制。RESTful API 在 2010 年变得非常流行。
+
+自 2005 年以来，可用于 Web 页面的 API 大大增加，其中几个 API 为特定目的扩展了 HTTP 协议，大部分是新的特定 HTTP 头：
+
+- [Server-sent events](https://developer.mozilla.org/zh-CN/docs/Web/API/Server-sent_events)，服务器可以偶尔推送消息到浏览器。
+- [WebSocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSockets_API)，一个新协议，可以通过升级现有 HTTP 协议来建立。
+
+
+
 ::: details  🎈本节参考
 
 - https://webfoundation.org/about/vision/history-of-the-web/
