@@ -246,6 +246,16 @@ Vary: Cookie, Accept-Encoding
 
 
 
+## SPDY——Google的尝试(2009)
+
+这些年来，网页愈渐变得的复杂，甚至演变成了独有的应用，可见媒体的播放量，增进交互的脚本大小也增加了许多：更多的数据通过 HTTP 请求被传输。HTTP/1.1 链接需要请求以正确的顺序发送，理论上可以用一些并行的链接（尤其是 5 到 8 个），带来的成本和复杂性堪忧。比如，HTTP 管线化（pipelining）就成为了 Web 开发的负担。为此，在 2010 年早期，谷歌通过实践了一个实验性的 SPDY 协议。
+
+SPDY 的功能包括多路复用、压缩、优先级、安全性等。本节不打算详细介绍 SPDY，因为我们在下一节中深入了解 HTTP/2 的本质时，您就会明白了，HTTP/2 主要是受到 SPDY 的启发。
+
+在2015年，Google决定将SPDY协议与HTTP合并，并基于SPDY的特点推出了HTTP/2。通过将SPDY融入HTTP/2，Google希望避免存在两个竞争的标准，统一标准有利于更好地推动Web协议的发展。同时，Google宣布SPDY协议被废弃，不再继续作为一个独立的协议存在，HTTP/2成为了SPDY的继任者，并继续在未来发展和推广。
+
+
+
 ::: details  🎈本节参考
 
 - https://webfoundation.org/about/vision/history-of-the-web/
