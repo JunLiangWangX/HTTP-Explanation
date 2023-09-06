@@ -62,7 +62,7 @@ export default withPwa(defineConfig({
     langMenuLabel: '切换语言',
     outlineTitle: '目录',
     footer: {
-      message: 'Released under the MIT License.',
+      message: '请勿将本站文章用作商业用途 | 转载请标明来源',
       copyright: 'Copyright © 2023-present JunLiangWang'
     },
     editLink: {
@@ -78,6 +78,9 @@ export default withPwa(defineConfig({
         items: [
           {
             text: 'HTTP的历史', link: '/docs/overview/the-history-of-http'
+          },
+          {
+            text: 'HTTP的报文格式', link: '/docs/overview/http-message-format'
           }
         ]
       },
