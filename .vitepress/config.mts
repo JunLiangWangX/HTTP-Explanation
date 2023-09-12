@@ -85,6 +85,13 @@ export default withPwa(defineConfig({
         ]
       },
       {
+        text: '安全策略',
+        items: [{
+          text: '拯救不安全的HTTP - HTTPS', link: '/docs/security-strategy/rescue-insecure-http-https'
+        }
+        ]
+      },
+      {
         text: '请求头',
         items: [
           { text: 'Connection', link: '/connection' },

@@ -336,3 +336,5 @@ HTTP消息头目前仍是基于ASCII编码的，通常采用ASCII字符集。这
 - https://www.oreilly.com/library/view/http-the-definitive/1565925092/ch01s05.html
 
  :::
+
+转载需要经过本人同意，并标明出处！
