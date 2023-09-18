@@ -117,7 +117,7 @@ Path的形式：
 
 - **相对URL：** 这是最常见的形式，除了`CONNECT`方法都可以使用。
 
-  ```示例
+  ```http
   / 
   /background.png 
   /test.html?query=alibaba
@@ -126,20 +126,20 @@ Path的形式：
 
 - **绝对URL：** 主要在使用 `GET` 方法连接到代理时使用。
 
-  ```示例
+  ```http
   https://wangjunliang.com/HTTP-Explanation/index.html
   https://wangjunliang.com/HTML-Guide/index.html
   ```
 
 - **包含端口的绝对URL：** 在使用 `CONNECT` 建立 HTTP 隧道时才使用。
 
-  ```示例
+  ```http
   https://wangjunliang.com:80
   ```
 
 - **一个星号：** 配合 `OPTIONS` 方法使用，代表整个服务器。
 
-  ```示例
+  ```http
   *
   ```
 

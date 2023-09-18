@@ -50,7 +50,7 @@ XSS（Cross-Site Scripting，跨站脚本攻击，简称XSS）攻击是一种利
 
 ## 内容安全策略(Content Security Policy ，简称CSP)
 
-**内容安全策略（CSP）是一个额外的安全层，用于检测报告并削弱某些特定类型的攻击，包括跨站脚本（XSS）和数据注入攻击等**。该安全策略通过设置HTTP[响应标头](http://localhost:5173/HTTP-Explanation/docs/overview/http-message-format.html#消息头)中的`Content-Security-Policy`字段，告诉浏览器哪些来源是受信任的，哪些操作是允许的，从而减少跨站脚本（XSS）攻击的风险。
+**内容安全策略（CSP）是一个额外的安全层，用于检测报告并削弱某些特定类型的攻击，包括跨站脚本（XSS）和数据注入攻击等**。该安全策略通过设置HTTP[响应标头](../overview/http-message-format.md#消息头)中的`Content-Security-Policy`字段，告诉浏览器哪些来源是受信任的，哪些操作是允许的，从而减少跨站脚本（XSS）攻击的风险。
 
 <br>
 
