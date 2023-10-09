@@ -90,6 +90,12 @@ export default withPwa(defineConfig({
           text: '拯救不安全的HTTP - HTTPS', link: '/docs/security-strategy/rescue-insecure-http-https'
         },{
           text: 'XSS攻击？内容安全策略会出手的', link: '/docs/security-strategy/content-security-policy'
+        },{
+          text: '又跨域了？一文解释清楚同源策略', link: '/docs/security-strategy/same-origin-policy'
+        },{
+          text: 'CSRF攻击', link: '/docs/security-strategy/cross-site-request-forgery'
+        },{
+          text: '常见攻击与防护', link: '/docs/security-strategy/common-attack-and-protection-methods'
         }
         ]
       },
