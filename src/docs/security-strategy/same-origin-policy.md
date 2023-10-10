@@ -225,3 +225,5 @@ JavaScript 的 API 中，如 `iframe.contentWindow`、 `window.parent`、`window
 - https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS
 
 :::
+
+转载需要经过本人同意，并标明出处！
