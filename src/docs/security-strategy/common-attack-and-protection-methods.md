@@ -123,3 +123,6 @@ CSRF（Cross-Site Request Forgery，跨站请求伪造，简称CSRF）是一种�
 
 Mozilla Observatory虽然是一个有用的工具，可以帮助我们快速评估和改善Web应用程序的安全性。但请注意，Mozilla Observatory只是一个工具，它并不能解决所有安全问题。因此我们并不是说使用了它就能杜绝一切安全问题，维护Web应用程序的安全性需要综合性的措施和定期审查。
 
+
+
+转载需要经过本人同意，并标明出处！
