@@ -311,7 +311,7 @@ Access-Control-Allow-Credentials: true
 
 ### 简单请求
 
-求满足所有下述条件，则该请求可视为简单请求：
+满足所有下述条件，则该请求可视为简单请求：
 
 - 使用以下方法之一：
 
@@ -362,13 +362,13 @@ Access-Control-Allow-Credentials: true
 
 
 
-::: danger 需要注意的地方
+### 需要注意的地方
 
 - 当携带了Cookie等认证信息的跨源请求，响应标头`Access-Control-Allow-Origin`、`Access-Control-Allow-methods`、`Access-Control-Allow-heders`、`Access-Control-Expose-Headers`都不能为*
 - 当简单请求携带了Cookie等认证信息，如果响应中缺失 `Access-Control-Allow-Credentials: true`响应标头，则响应内容会被忽略，不会提供给 web ；如果存在该响应标头，则必须携带Cookie等认证信息。当复杂请求的预检响应中缺失 `Access-Control-Allow-Credentials: true`响应标头，实际请求则不能携带Cookie等认证信息，如果存在，实际请求则必须携带Cookie等认证信息
 - 携带`Authorization`请求标头会把简单请求变为复杂请求
 
-:::
+
 
 
 
