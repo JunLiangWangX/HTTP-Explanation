@@ -100,6 +100,23 @@ export default withPwa(defineConfig({
         ]
       },
       {
+        text: '身份认证策略',
+        items: [{
+          text: 'Cookie', link: '/docs/authentication-strategy/cookie'
+        },{
+          text: 'Authorization', link: '/docs/authentication-strategy/authorization'
+        },
+        
+        ]
+      },
+      {
+        text: '性能优化策略',
+        items: [{
+          text: 'HTTP缓存', link: '/docs/performance-optimization-strategy/http-cache'
+        }
+        ]
+      },
+      {
         text: '请求头',
         items: [
           { text: 'Connection', link: '/connection' },
