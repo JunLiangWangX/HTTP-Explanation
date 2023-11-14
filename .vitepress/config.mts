@@ -88,13 +88,13 @@ export default withPwa(defineConfig({
         text: '安全策略',
         items: [{
           text: '拯救不安全的HTTP - HTTPS', link: '/docs/security-strategy/rescue-insecure-http-https'
-        },{
+        }, {
           text: 'XSS攻击？内容安全策略会出手的', link: '/docs/security-strategy/content-security-policy'
-        },{
+        }, {
           text: 'CSRF攻击？同源策略会出手的', link: '/docs/security-strategy/same-origin-policy'
-        },{
+        }, {
           text: '又跨域了？一文解释清楚跨源资源共享（cors）', link: '/docs/security-strategy/cross-origin-resource-sharing'
-        },{
+        }, {
           text: '常见攻击与防护', link: '/docs/security-strategy/common-attack-and-protection-methods'
         }
         ]
@@ -103,18 +103,19 @@ export default withPwa(defineConfig({
         text: '身份认证策略',
         items: [{
           text: 'Cookie', link: '/docs/authentication-strategy/cookie'
-        },{
+        }, {
           text: 'Authorization', link: '/docs/authentication-strategy/authorization'
         },
-        
+
         ]
       },
       {
         text: '性能优化策略',
         items: [{
+          text: '长连接与短连接', link: '/docs/performance-optimization-strategy/long-connection-and-short-connection'
+        }, {
           text: 'HTTP缓存', link: '/docs/performance-optimization-strategy/http-cache'
-        }
-        ]
+        }]
       },
       {
         text: '请求头',
