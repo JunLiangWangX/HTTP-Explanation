@@ -116,13 +116,6 @@ export default withPwa(defineConfig({
         }, {
           text: 'HTTP缓存', link: '/docs/performance-optimization-strategy/http-cache'
         }]
-      },
-      {
-        text: '请求头',
-        items: [
-          { text: 'Connection', link: '/connection' },
-          { text: 'Keep-Alive', link: '/keep-alive' }
-        ]
       }
     ],
 
