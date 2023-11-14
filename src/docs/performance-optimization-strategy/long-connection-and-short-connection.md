@@ -75,7 +75,11 @@ Server: Apache 0.84
 
 
 
-### Connection `请求标头`
+### 相关标头
+
+
+
+#### Connection `请求标头`
 
 **`Connection` 控制网络连接在当前请求完成后是否仍然保持连接状态。** 如果发送的值是 `keep-alive`，它会保持连接去完成后续对同一服务器的请求；如果发送值是`close`，它每发起一个请求时都会创建一个新的网络连接，并在收到应答时立即关闭。
 
@@ -103,6 +107,34 @@ Connection: close
 ::: danger 警告
 
 在 [HTTP/2](https://httpwg.org/specs/rfc9113.html#ConnectionSpecific) 和 [HTTP/3](https://httpwg.org/specs/rfc9114.html#header-formatting) 中，禁止使用特定于连接的标头字段，如 `Connection` 和 `Keep-Alive`。Chrome 和 Firefox 会在 HTTP/2 响应中忽略它们，但 Safari 遵循 HTTP/2 规范要求，不会加载包含这些字段的任何响应。
+
+:::
+
+
+
+#### Keep-Alive `请求标头`
+
+当请求头`Connection`为`keep-alive`时(请求保持连接去完成后续对同一服务器的请求)，可通过设置`Keep-Alive`请求头来指定空闲的连接需要保持的最小时长以及该连接可以发送的最大请求数量。
+
+**参数**
+
+- **timeout=\<number>**
+
+  指定了一个空闲连接需要保持打开状态的最小时长（以秒为单位）。需要注意的是，如果没有在传输层设置 keep-alive TCP message 的话，大于 TCP 层面的超时设置会被忽略。
+
+- **max=\<number>**
+
+  在连接关闭之前，在此连接可以发送的请求的最大值。在非管道连接中，除了 0 以外，这个值是被忽略的，因为需要在紧跟着的响应中发送新一次的请求。HTTP 管道连接则可以用它来限制管道的使用
+
+**示例**
+
+```http
+Keep-Alive: timeout=5, max=1000
+```
+
+::: danger 警告
+
+需要将 请求头 `Connection` 的值设置为 `"keep-alive"`这个标头才有意义。同时需要注意的是，在 HTTP/2 协议中， `Connection`和 `Keep-Alive`是被忽略的；在其中采用其他机制来进行连接管理。
 
 :::
 
@@ -230,6 +262,7 @@ HTTP是一种无状态的协议。简而言之，这意味着**每个请求必�
 -   <https://cs.fyi/guide/http-in-depth>
 -   <https://http2-explained.haxx.se/zh/part2>
 -   <https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Connection_management_in_HTTP_1.x>
+-   https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Keep-Alive
 
 
 
