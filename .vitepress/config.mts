@@ -115,6 +115,8 @@ export default withPwa(defineConfig({
           text: '长连接与短连接', link: '/docs/performance-optimization-strategy/long-connection-and-short-connection'
         }, {
           text: 'HTTP缓存', link: '/docs/performance-optimization-strategy/http-cache'
+        }, {
+          text: '数据压缩', link: '/docs/performance-optimization-strategy/data-compression'
         }]
       }
     ],
