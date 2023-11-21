@@ -45,7 +45,20 @@ export default withPwa(defineConfig({
         gtag('js', new Date());
         gtag('config', 'G-X83T8C1XEL');`
 
+    ],
+    [
+      'script',
+      {},
+      `var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?92e568bf422499874640dbee88096c2d";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();`
     ]
+
+    
   ],
   themeConfig: {
     // logo:'./.vitepress/assets/logo.svg',
@@ -118,7 +131,17 @@ export default withPwa(defineConfig({
         }, {
           text: '数据压缩', link: '/docs/performance-optimization-strategy/data-compression'
         }]
-      }
+      },
+      /*{
+        text: '内容协商策略',
+        items: [{
+          text: '条件请求', link: '/docs/performance-optimization-strategy/long-connection-and-short-connection'
+        }, {
+          text: '范围请求', link: '/docs/performance-optimization-strategy/http-cache'
+        }, {
+          text: '内容协商', link: '/docs/performance-optimization-strategy/data-compression'
+        }]
+      }*/
     ],
 
     socialLinks: [
