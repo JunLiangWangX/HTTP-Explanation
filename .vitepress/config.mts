@@ -132,16 +132,14 @@ export default withPwa(defineConfig({
           text: '数据压缩', link: '/docs/performance-optimization-strategy/data-compression'
         }]
       },
-      /*{
+      {
         text: '内容协商策略',
         items: [{
-          text: '条件请求', link: '/docs/performance-optimization-strategy/long-connection-and-short-connection'
-        }, {
-          text: '范围请求', link: '/docs/performance-optimization-strategy/http-cache'
-        }, {
-          text: '内容协商', link: '/docs/performance-optimization-strategy/data-compression'
+          text: '范围请求', link: '/docs/content-negotiation/range-request'
+        },{
+          text: '条件请求', link: '/docs/content-negotiation/condition-request'
         }]
-      }*/
+      }
     ],
 
     socialLinks: [
