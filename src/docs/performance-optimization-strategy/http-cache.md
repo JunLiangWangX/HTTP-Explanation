@@ -498,7 +498,7 @@ If-Modified-Since: Wed, 21 Oct 2015 07:28:00 GMT
 
   `'W/'`(大小写敏感) 表示使用[弱验证器](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Conditional_requests#weak_validation)。弱验证器很容易生成，但不利于比较。强验证器是比较的理想选择，但很难有效地生成。相同资源的两个弱`Etag`值可能语义等同，但不是每个字节都相同。
 
-- **\<etag_value>**
+- **\"<etag_value>"**
 
   指定一个版本号，没有明确指定生成 ETag 值的方法。通常，使用内容的散列，最后修改时间戳的哈希值，或简单地使用版本号。例如，MDN 使用 wiki 内容的十六进制数字的哈希值。
 
@@ -525,7 +525,7 @@ ETag: W/"0815"
 
   `'W/'`(大小写敏感) 表示使用[弱验证器](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Conditional_requests#weak_validation)。弱验证器很容易生成，但不利于比较。强验证器是比较的理想选择，但很难有效地生成。相同资源的两个弱`Etag`值可能语义等同，但不是每个字节都相同。
 
-- **\<etag_value>**
+- **\"<etag_value>"**
 
   指定一个版本号，表示希望服务器检查资源是否与给定版本号匹配。
 
