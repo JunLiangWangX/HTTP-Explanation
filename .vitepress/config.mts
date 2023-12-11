@@ -83,7 +83,8 @@ export default withPwa(defineConfig({
       pattern: 'https://github.com/JunLiangWangX/HTTP-Explanation/edit/main/src/:path'
     },
     nav: [
-      { text: '支持作者', link: '/docs/support' }
+      { text: '支持作者', link: '/docs/support' },
+      { text: '作者博客', link: 'https://wangjunliang.com/#/home' }
     ],
     sidebar: [
       {
