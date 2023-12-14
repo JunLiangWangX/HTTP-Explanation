@@ -138,6 +138,8 @@ export default withPwa(defineConfig({
           text: '范围请求', link: '/docs/content-negotiation/range-request'
         },{
           text: '条件请求', link: '/docs/content-negotiation/condition-request'
+        },{
+          text: '内容协商', link: '/docs/content-negotiation/content-negotiation'
         }]
       }
     ],
