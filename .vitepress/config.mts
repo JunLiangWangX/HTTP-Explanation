@@ -140,7 +140,17 @@ export default withPwa(defineConfig({
           text: '条件请求', link: '/docs/content-negotiation/condition-request'
         },{
           text: '内容协商', link: '/docs/content-negotiation/content-negotiation'
+        },{
+          text: '客户端提示', link: '/docs/content-negotiation/client-hints'
         }]
+      },
+      {
+        text: '其他',
+        items: []
+      },
+      {
+        text: '疑难杂症',
+        items: []
       }
     ],
 
