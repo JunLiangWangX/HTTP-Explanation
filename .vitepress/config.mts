@@ -146,7 +146,9 @@ export default withPwa(defineConfig({
       },
       {
         text: '其他',
-        items: []
+        items: [{
+          text: 'MIME类型', link: '/docs/other/mime-type'
+        },]
       },
       {
         text: '疑难杂症',
