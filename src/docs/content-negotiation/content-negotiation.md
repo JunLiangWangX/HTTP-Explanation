@@ -319,5 +319,7 @@ Content-Encoding: deflate, gzip
 - https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Type
 - https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept-Charset
 - https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept-Language
+- https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Encoding
+- https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept-Encoding
 
 转载需要经过本人同意，并标明出处！
