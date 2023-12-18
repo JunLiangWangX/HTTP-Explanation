@@ -99,6 +99,10 @@ Apache 服务器支持数据压缩，有 [mod_deflate](https://httpd.apache.org/
 
 **参数**
 
+该请求标头并无其他参数。
+
+**取值**
+
 - **[ \<compress-algorithm>;q=\<q>, \<compress-algorithm>,.......]** 
 
   指定一系列客户端支持的压缩算法（\<compress-algorithm>），以及优先级（q=\<q>，可选），压缩算法与优先级使用分号（;）分隔，压缩算法之间使用逗号(,)分隔。
@@ -125,11 +129,15 @@ Accept-Encoding: br;q=1.0, gzip;q=0.8, *;q=0.1
 
 
 
-### Content-Encoding `响应标头`
+### Content-Encoding `实体标头`
 
-**响应标头Content-Encoding 列出了对当前响应体应用的所有压缩算法以及其编码顺序**。它让客户端知道需要以何种算法以及顺序解码该响应体以获得原始数据。
+**实体标头Content-Encoding 列出了对当前响应体应用的所有压缩算法以及其编码顺序**。它让客户端知道需要以何种算法以及顺序解码该响应体以获得原始数据。
 
 **参数**
+
+该实体标头并无其他参数。
+
+**取值**
 
 - **[ \<compress-algorithm>, \<compress-algorithm>,.......]** 
 
