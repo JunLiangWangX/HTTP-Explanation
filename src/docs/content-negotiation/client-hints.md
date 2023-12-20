@@ -20,24 +20,59 @@
 
 | 标头名称           | 作用                                                         |
 | ------------------ | ------------------------------------------------------------ |
-| Save-Data          | 表明用户是否希望在网络连接较慢或有数据限制的情况下优先加载轻量级的页面或资源 |
+| Save-Data          | 表明用户是否希望在网络连接较慢或有数据限制的情况下优先加载轻量级的页面或资源。 |
 | Sec-CH-UA          | 表明用户使用的浏览器的品牌（brand）和重要的版本信息。        |
-| Sec-CU-UA-Mobile   |                                                              |
-| Sec-CH-UA-Platform |                                                              |
+| Sec-CU-UA-Mobile   | 表明用户是否位于移动设备上，如果是桌面浏览器也可以使用它来指示对“移动”用户体验的偏好。 |
+| Sec-CH-UA-Platform | 表明用户设备使用的平台或操作系统。                           |
 
 
 
 ### 高熵提示
 
-| 标头名称 | 作用 |
-| -------- | ---- |
-|          |      |
-|          |      |
-|          |      |
+| 标头名称                      | 作用                                                         |
+| ----------------------------- | ------------------------------------------------------------ |
+| Sec-CH-UA-Arch                | 表明用户设备使用的 CPU 架构，例如 ARM 或 x86。               |
+| Sec-CH-UA-Full-Version-List   | 表明用户使用的浏览器的品牌（brand）和完整版本信息。          |
+| Sec-CH-UA-Bitness             | 表明用户设备使用的 CPU 架构的“位数”，通常为 64 位或 32 位。  |
+| Sec-CH-UA-Model               | 表明用户的设备型号。                                         |
+| Sec-CH-UA-Platform-Version    | 表明用户设备使用的平台或操作系统的版本。                     |
+| Sec-CH-Prefers-Reduced-Motion | 表明用户对减少动画的偏好，与CSS媒体查询[prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)相同。 |
+| Sec-CH-Prefers-Color-Scheme   | 表明用户对浅色或深色主题的偏好，与CSS媒体查询[prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)相同。 |
+| Device-Memory                 | 表明用户设备内存的近似大小。                                 |
+| DPR                           | 表明用户设备的像素比 (DPR)，该比例是与每个 CSS 像素相对应的物理设备像素的数量。 |
+| Downlink                      | 提供客户端连接到服务器的大致带宽，以 Mbps 为单位。           |
+| ECT                           | 表明客户端[有效的连接类型](https://developer.mozilla.org/en-US/docs/Glossary/Effective_connection_type)： slow-2g、2g、3g、4g。 |
+| RTT                           | 表明客户端发送请求到服务器并返回响应所需的时间。             |
+
+::: danger 客户端提示相关标头仅能在HTTPS中使用
+
+:::
 
 
 
 ## 重要的客户端提示
+
+**重要的客户端提示是指那些可能显著改变页面渲染方式，影响网站交互以及可用性的客户端提示**。例如，`Sec-CH-Prefers-Reduced-Motion` 通常被视作重要的客户端提示，因为它可能会显著影响动画的行为，因此需要浏览器第一时间设置并提供。
+
+**服务器可以使用 `Critical-CH` 响应标头去指定 `Accept-CH` 响应标头列举的客户端提示中哪些是重要客户端提示**。浏览器接收到有 `Critical-CH` 标头的响应，必须检查其中指定的客户端提示标头是否已经在请求中发送，如果没有发送，则需要携带相关标头重新请求。
+
+例如，在这种情况下，服务器通过 `Accept-CH`响应标头告诉客户端它接受 `Sec-CH-Prefers-Reduced-Motion`客户端提示，且使用 `Critical-CH`响应标头指定 `Sec-CH-Prefers-Reduced-Motion`为一个重要客户端提示：
+
+```http
+HTTP/1.1 200 OK
+Content-Type: text/html
+Accept-CH: Sec-CH-Prefers-Reduced-Motion
+Vary: Sec-CH-Prefers-Reduced-Motion
+Critical-CH: Sec-CH-Prefers-Reduced-Motion
+```
+
+由于 `Sec-CH-Prefers-Reduced-Motion` 在首次请求中不存在，因此浏览器会自动地重新请求并携带上 `Sec-CH-Prefers-Reduced-Motion` 标头。
+
+```http
+GET / HTTP/1.1
+Host: example.com
+Sec-CH-Prefers-Reduced-Motion: "reduce"
+```
 
 
 
