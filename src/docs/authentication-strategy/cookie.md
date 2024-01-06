@@ -1,3 +1,13 @@
+---
+title: Cookie
+head:
+  - - meta
+    - name: description
+      content: Cookie是服务器发送到用户浏览器并保存在本地的一小块文本数据，浏览器会存储 Cookie 并在下次向同一服务器再发起请求时携带并发送到服务器上，用于跟踪用户与网站的互动、存储用户相关信息以及保持用户状态等。
+  - - meta
+    - name: keywords
+      content: Cookie Set-cookie Cookie安全风险 第三方Cookie
+---
 # Cookie
 
 **Cookie是服务器发送到用户浏览器并保存在本地的一小块文本数据，浏览器会存储 Cookie 并在下次向同一服务器再发起请求时携带并发送到服务器上，用于跟踪用户与网站的互动、存储用户相关信息以及保持用户状态等**，Cookie 使基于无状态的 HTTP 协议记录稳定的状态信息成为了可能。
