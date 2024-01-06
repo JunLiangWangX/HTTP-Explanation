@@ -1,3 +1,13 @@
+---
+title: Authorization
+head:
+  - - meta
+    - name: description
+      content: Authorization是一种通用的、标准化的权限控制和认证的通用框架，它能够使跨系统和跨域的身份验证和授权管理更容易，使不同应用程序之间能够更轻松地实现单点登录（SSO）、用户身份验证和授权控制等。
+  - - meta
+    - name: keywords
+      content: Authorization WWW-Authenticate HTTP SSO 用户身份验证 授权控制 Basic Digest Bearer JWT API密钥
+---
 # Authorization
 
 Authorization是HTTP 提供一个用于权限控制和认证的通用框架，可能有不少小伙伴会感到疑惑"**Cookie不就可以做权限控制和认证吗？**"，确实如此！ **Cookie确实是在单个系统内认证用户身份、保持会话状态的有效方式，但如果涉及到多个系统、多个域名或多个应用程序之间认证、授权呢？** 使用Cookie的话该如何办呢？是不是想想都头皮发麻呢？为解决这个问题， **HTTP急需一种更通用、更灵活的身份验证和授权机制，使跨系统和跨域的身份验证和授权管理更容易，这对于现代应用程序中的多样化环境非常重要，就这样Authorization诞生了！**
