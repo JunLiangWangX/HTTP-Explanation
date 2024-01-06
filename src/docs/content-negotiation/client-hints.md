@@ -1,3 +1,13 @@
+---
+title: 客户端提示
+head:
+  - - meta
+    - name: description
+      content: 客户端提示（Client Hint）是HTTP的一种内容协商机制，它通过在请求中设置特定的请求标头向服务器主动传达有关设备、网络、用户以及用户代理等信息，从而帮助服务器更好地理解客户端的上下文，以便做出更合适的响应。
+  - - meta
+    - name: keywords
+      content: 客户端提示 ClientHint 低熵提示 高熵提示 重要的客户端提示 Accept-CH Save-Data Sec-CH-UA Sec-CH-UA-Mobile Sec-CH-UA-Platform Sec-CH-UA-Arch Sec-CH-UA-Full-Version-List Sec-CH-UA-Bitness Sec-CH-UA-Model Sec-CH-UA-Platform-Version Sec-CH-Prefers-Reduced-Motion Sec-CH-Prefers-Color-Scheme Device-Memory Sec-CH-DPR Sec-CH-Width Sec-CH-Viewport-Width Sec-CH-Viewport-Height Downlink ECT RTT
+---
 # 客户端提示
 
 **客户端提示（Client Hint）是HTTP的一种内容协商机制，它通过在请求中设置特定的请求标头向服务器主动传达有关设备、网络、用户以及用户代理等信息，从而帮助服务器更好地理解客户端的上下文，以便做出更合适的响应。**
