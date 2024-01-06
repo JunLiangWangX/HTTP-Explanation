@@ -9,6 +9,9 @@ export default withPwa(defineConfig({
       __DATE__: `'${new Date().toISOString()}'`,
     },
   },
+  sitemap: {
+    hostname: 'https://wangjunliang.com/HTTP-Explanation/'
+  },
   title: "HTTP完全注释",
   description: "HTTP完全注释",
   lang: "zh-CN",
