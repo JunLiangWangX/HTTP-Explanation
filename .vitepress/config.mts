@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { withPwa } from '@vite-pwa/vitepress'
 import { SearchPlugin } from "vitepress-plugin-search";
+import Sitemap from 'vite-plugin-sitemap'
 // https://vitepress.dev/reference/site-config
 export default withPwa(defineConfig({
   vite: {
@@ -8,7 +9,7 @@ export default withPwa(defineConfig({
     define: {
       __DATE__: `'${new Date().toISOString()}'`,
     },
-    plugins: [SearchPlugin()]
+    plugins: [SearchPlugin(),Sitemap()]
   },
   title: "HTTP完全注释",
   description: "HTTP完全注释",
