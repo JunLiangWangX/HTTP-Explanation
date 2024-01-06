@@ -8,9 +8,13 @@ export default withPwa(defineConfig({
     logLevel: 'info',
     define: {
       __DATE__: `'${new Date().toISOString()}'`,
-    },
-    plugins: [SearchPlugin(),Sitemap()]
+    },   
+    plugins: [SearchPlugin(), Sitemap({ extensions:['html', 'md'],outDir: './public', hostname: 'https://wangjunliang.com/HTTP-Explanation/' })]
   },
+  async buildEnd() {
+
+  },
+
   title: "HTTP完全注释",
   description: "HTTP完全注释",
   lang: "zh-CN",
