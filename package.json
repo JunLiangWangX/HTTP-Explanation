@@ -1,7 +1,9 @@
 {
   "devDependencies": {
     "@vite-pwa/vitepress": "^0.2.0",
-    "vitepress": "^1.0.0-beta.3"
+    "flexsearch": "^0.7.34",
+    "vitepress": "^1.0.0-beta.3",
+    "vitepress-plugin-search": "^1.0.4-alpha.22"
   },
   "scripts": {
     "dev": "vitepress dev",

@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { withPwa } from '@vite-pwa/vitepress'
-
+import { SearchPlugin } from "vitepress-plugin-search";
 // https://vitepress.dev/reference/site-config
 export default withPwa(defineConfig({
   vite: {
@@ -8,9 +8,7 @@ export default withPwa(defineConfig({
     define: {
       __DATE__: `'${new Date().toISOString()}'`,
     },
-  },
-  sitemap: {
-    hostname: 'https://wangjunliang.com/HTTP-Explanation/'
+    plugins: [SearchPlugin()]
   },
   title: "HTTP完全注释",
   description: "HTTP完全注释",
@@ -61,7 +59,7 @@ export default withPwa(defineConfig({
       })();`
     ]
 
-    
+
   ],
   themeConfig: {
     // logo:'./.vitepress/assets/logo.svg',
@@ -139,11 +137,11 @@ export default withPwa(defineConfig({
         text: '内容协商策略',
         items: [{
           text: '范围请求', link: '/docs/content-negotiation/range-request'
-        },{
+        }, {
           text: '条件请求', link: '/docs/content-negotiation/condition-request'
-        },{
+        }, {
           text: '内容协商', link: '/docs/content-negotiation/content-negotiation'
-        },{
+        }, {
           text: '客户端提示', link: '/docs/content-negotiation/client-hints'
         }]
       },
