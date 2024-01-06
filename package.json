@@ -2,7 +2,6 @@
   "devDependencies": {
     "@vite-pwa/vitepress": "^0.2.0",
     "flexsearch": "^0.7.34",
-    "vite-plugin-sitemap": "^0.5.3",
     "vitepress": "^1.0.0-beta.3",
     "vitepress-plugin-search": "^1.0.4-alpha.22"
   },
@@ -12,6 +11,7 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
+    "sitemap-ts": "^1.4.0",
     "vite-plugin-pwa": "^0.16.3"
   }
 }

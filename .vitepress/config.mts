@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitepress'
 import { withPwa } from '@vite-pwa/vitepress'
-import { SearchPlugin } from "vitepress-plugin-search";
-import Sitemap from 'vite-plugin-sitemap'
+import { SearchPlugin } from "vitepress-plugin-search"
+import { generateSitemap as sitemap } from 'sitemap-ts'
+
 // https://vitepress.dev/reference/site-config
 export default withPwa(defineConfig({
   vite: {
@@ -9,7 +10,10 @@ export default withPwa(defineConfig({
     define: {
       __DATE__: `'${new Date().toISOString()}'`,
     },   
-    plugins: [SearchPlugin(), Sitemap({ extensions:['html', 'md'],outDir: './public', hostname: 'https://wangjunliang.com/HTTP-Explanation/' })]
+    plugins: [SearchPlugin()]
+  },
+  buildEnd: ({ outDir }) => {
+    sitemap({ hostname: 'https://wangjunliang.com/HTTP-Explanation/', basePath: 'HTTP-Explanation', outDir })
   },
   title: "HTTP完全注释",
   description: "HTTP完全注释",
