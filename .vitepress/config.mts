@@ -11,10 +11,6 @@ export default withPwa(defineConfig({
     },   
     plugins: [SearchPlugin(), Sitemap({ extensions:['html', 'md'],outDir: './public', hostname: 'https://wangjunliang.com/HTTP-Explanation/' })]
   },
-  async buildEnd() {
-
-  },
-
   title: "HTTP完全注释",
   description: "HTTP完全注释",
   lang: "zh-CN",
