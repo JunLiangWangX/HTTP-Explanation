@@ -1,3 +1,13 @@
+---
+title: HTTPS
+head:
+  - - meta
+    - name: description
+      content: HTTPS是基于HTTP协议的安全版本，它通过在HTTP上建立SSL或TLS加密层，使得HTTP通信具备身份验证、信息加密和完整性校验的功能，以解决HTTP中的种种安全问题。
+  - - meta
+    - name: keywords
+      content: HTTP HTTP安全 HTTPS TCP TLS/SSL三次握手 数字证书 证书链 对称加密 非对称加密 HTTPS安全隐患 Strict-Transport-Security HTTP与HTTPS的区别
+---
 # 拯救不安全的HTTP — HTTPS
 
 Web早期的使用场景都是学校之前传输学术论文，在当时Web几乎就是一个学术网络。由于使用人群单一，使用人数少，相对信任程度很高，因此当时人们并不觉得HTTP使用明文传输有什么不妥。但随着Web的极速发展，社会上越来越多商业、政府组织机构使用这一新生技术来完成自己的业务，HTTP也开始承载着越来越多重要的、私人的信息发往各地。
