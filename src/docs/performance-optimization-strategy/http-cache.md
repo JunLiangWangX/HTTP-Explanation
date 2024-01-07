@@ -1,3 +1,13 @@
+---
+title: HTTP缓存
+head:
+  - - meta
+    - name: description
+      content: HTTP缓存是一种HTTP的性能优化机制，它是为了提高Web页面加载速度和减轻服务器负载而设计的，通过这种机制，Web浏览器或其他客户端可以存储先前获取的Web资源的副本，并在后续请求相同资源时使用这些副本，而不是再次从服务器请求。
+  - - meta
+    - name: keywords
+      content: HTTP HTTP缓存 HTTP缓存的工作流程 私有缓存 共享缓存 强制重新验证 不使用缓存 请求折叠 无法删除以及重新验证的缓存 可被缓存的请求方法 控制缓存存放位置 控制缓存时间 Cache-Control Expires Vary Last-Modified If-Modified-Since ETag If-None-Match
+---
 # HTTP缓存
 
 **HTTP缓存是一种HTTP的性能优化机制，它是为了提高Web页面加载速度和减轻服务器负载而设计的，通过这种机制，Web浏览器或其他客户端可以存储先前获取的Web资源的副本，并在后续请求相同资源时使用这些副本，而不是再次从服务器请求。** 通过使用HTTP缓存，可以减少对服务器的请求次数，这有助于减少请求的网络延迟、提高网页加载速度、降低服务器负载，以及减少网络流量。
