@@ -1,5 +1,15 @@
-# 长连接与短连接
+---
+title: 长连接与短连接
+head:
+  - - meta
+    - name: description
+      content: 如今获取网页的完整内容需要发送几次甚至十几次请求才能获得，比如您访问的网页有 10 个图像、5 个样式表和 5 个 javascript 文件，当您需要获取网页完整且正确的内容时，需要发出总共 20 个请求，而每打开一个 TCP 连接都是相当耗费资源的操作，HTTP/1.1 引入了持久连接，即默认情况下连接不会关闭（Connection:keep-alive），而是保持打开状态，允许多个顺序请求。
+  - - meta
+    - name: keywords
+      content: HTTP HTTP长连接 HTTP短连接 HTTP管道化 Connection Keep-Alive 线头阻塞
+---
 
+# 长连接与短连接
 
 
 ## HTTP/0.9
