@@ -1,3 +1,13 @@
+---
+title: HTTP中的数据压缩
+head:
+  - - meta
+    - name: description
+      content: 数据压缩是HTTP的性能优化机制，它通过压缩数据来减小传输数据的体积，从而提高网络性能，减少网络带宽，并加快页面加载速度。
+  - - meta
+    - name: keywords
+      content: HTTP HTTP数据压缩 HTTP数据压缩的发展 端到端压缩 逐跳压缩 常见的压缩算法 gzip deflate br compress Accept-Encoding Content-Encoding
+---
 # HTTP中的数据压缩
 
 **数据压缩是HTTP的性能优化机制，它通过压缩数据来减小传输数据的体积，从而提高网络性能，减少网络带宽，并加快页面加载速度。** 
