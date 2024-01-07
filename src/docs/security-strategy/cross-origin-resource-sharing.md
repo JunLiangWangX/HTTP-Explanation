@@ -1,3 +1,13 @@
+---
+title: 跨源资源共享
+head:
+  - - meta
+    - name: description
+      content: 跨域资源共享（Cross-Origin Resource Sharing，CORS）是一种网络安全机制，用于在Web应用中控制跨域请求的访问权限，允许 Web 对不同源的服务器进行跨源资源访问，并使跨源数据传输得以安全进行。
+  - - meta
+    - name: keywords
+      content: HTTP HTTP安全 CORS 跨源资源共享 Origin Access-Control-Request-Method Access-Control-Request-Headers Access-Control-Allow-Origin Access-Control-Allow-Methods Access-Control-Allow-Headers Access-Control-Expose-Headers Access-Control-Max-Age Access-Control-Allow-Credentials 简单请求 复杂请求
+---
 # 又跨域了？一文解释清楚跨源资源共享（cors）
 
 为确保在Web浏览器中来自不同源的网页或脚本不能随意访问和操纵其他源的资源和数据，保障网站只能在受信任的环境中访问和共享数据，HTTP引入了同源策略（Same Origin Policy，简称SOP）。同源策略的出现极大的增强了Web的安全性并有效的防止了CSRF攻击，但也随之带来了许多开发上的问题与麻烦，特别是当我们需要在与不同源（不同域名、不同协议、不同端口）的资源进行通信和访问时尤为明显，比如下面这个例子：
