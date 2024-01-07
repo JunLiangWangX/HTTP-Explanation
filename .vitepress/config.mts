@@ -90,6 +90,7 @@ export default withPwa(defineConfig({
     },
     nav: [
       { text: '支持作者', link: 'https://wangjunliang.com/#/supportBloggers' },
+      { text: '了解作者', link: 'https://wangjunliang.com/' },
     ],
     sidebar: [
       {
