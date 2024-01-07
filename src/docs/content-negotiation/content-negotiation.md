@@ -1,3 +1,13 @@
+---
+title: 内容协商
+head:
+  - - meta
+    - name: description
+      content: 在HTTP协议中，内容协商是一种用于为同一URI 提供资源不同的表示形式（如语言、字符集、媒体类型等）的机制，该机制能够让用户获得最合适的资源表现内容。
+  - - meta
+    - name: keywords
+      content: HTTP 内容协商 主动内容协商 响应式内容协商 内容类型协商 响应式内容协商 Accept Content-Type Accept-Charset Accept-Language Content-Language Accept-Encoding Content-Encoding
+---
 # 内容协商
 
 **在HTTP协议中，内容协商是一种用于为同一URI 提供资源不同的表示形式（如语言、字符集、媒体类型等）的机制，该机制能够让用户获得最合适的资源表现内容**。例如对于中文用户请求某一URI内容，服务器将返回该资源的中文形式；而英语用户请求同一资源时，则会返回该资源的英文形式。
