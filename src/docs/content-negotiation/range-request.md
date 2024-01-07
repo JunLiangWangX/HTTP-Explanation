@@ -1,3 +1,13 @@
+---
+title: 范围请求
+head:
+  - - meta
+    - name: description
+      content: 范围请求是HTTP的一种内容协商机制，该机制允许客户端只请求资源的部分内容。范围请求在传送大的媒体文件，或者与文件下载的断点续传功能搭配使用时非常有用。
+  - - meta
+    - name: keywords
+      content: HTTP 范围请求 Accept-Ranges Content-Length Range Content-Range If-Range Last-Modified ETag
+---
 # 范围请求
 
 **范围请求是HTTP的一种内容协商机制，该机制允许客户端只请求资源的部分内容**。范围请求在传送大的媒体文件，或者与文件下载的断点续传功能搭配使用时非常有用。
