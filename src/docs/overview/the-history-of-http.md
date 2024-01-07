@@ -1,3 +1,13 @@
+---
+title: HTTP的历史
+head:
+  - - meta
+    - name: description
+      content: 超文本传输协议（英语：HyperText Transfer Protocol，缩写：HTTP）是万维网（World Wide Web）的基础协议。自蒂姆·伯纳斯-李 （Tim BernersLee）博士和他的团队在 1989-1991 年间创造出它以来，HTTP 已经发生了太多的变化，在保持协议简单性的同时，不断扩展其灵活性。如今，HTTP 已经从一个只在实验室之间交换文档的早期协议进化到了可以传输图片，高分辨率视频和 3D 效果的现代复杂互联网协议。
+  - - meta
+    - name: keywords
+      content: HTTP HTTP发展史 HTTP的诞生 HTTP/0.9 单行协议 HTTP/1.0 构建可扩展性 HTTP/1.1 标准化的协议 HTTP/2 更优异的性能 HTTP/3 基于 QUIC 的 HTTP
+---
 # HTTP的历史
 
 **超文本传输协议**（英语：**H**yper**T**ext **T**ransfer **P**rotocol，缩写：**HTTP**）是[万维网](https://zh.wikipedia.org/wiki/%E4%B8%87%E7%BB%B4%E7%BD%91)（World Wide Web）的基础协议。自[蒂姆·伯纳斯-李 ](https://zh.wikipedia.org/wiki/提姆·柏內茲-李)（Tim BernersLee）博士和他的团队在 1989-1991 年间创造出它以来，HTTP 已经发生了太多的变化，在保持协议简单性的同时，不断扩展其灵活性。如今，HTTP 已经从一个只在实验室之间交换文档的早期协议进化到了可以传输图片，高分辨率视频和 3D 效果的现代复杂互联网协议。
