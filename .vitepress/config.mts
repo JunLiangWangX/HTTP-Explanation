@@ -10,7 +10,10 @@ export default withPwa(defineConfig({
     define: {
       __DATE__: `'${new Date().toISOString()}'`,
     },   
-    plugins: [SearchPlugin()]
+    plugins: [SearchPlugin({
+      preset:'score',
+      tokenize:'full'
+    })]
   },
   buildEnd: ({ outDir }) => {
     sitemap({ hostname: 'https://wangjunliang.com/HTTP-Explanation/', basePath: 'HTTP-Explanation', outDir })
