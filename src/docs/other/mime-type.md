@@ -120,10 +120,10 @@ MIME 类型为 `image` 的文件包含图像数据。子类型指定数据所代
 
 | 子类型(subtext) | 完整示例      | 描述                                                         |
 | --------------- | ------------- | ------------------------------------------------------------ |
-| jpeg            | image/jpeg    | 表明图片格式为JPEG(Joint Photographic Experts Group,联合图像专家组)，JPEG采用有损压缩（压缩比率：10%-20%左右），不支持透明度，不支持动画，适用于允许图像质量损失但大小尽可能小的情况。 |
-| png             | image/png     | 表明图片格式为PNG(Portable Network Graphics,便携式网络图形)，PNG采用无损压缩（压缩比率：30%-60%左右），支持透明度，不支持动画，适用于需要保持图像质量且不希望有损失的情况。 |
-| gif             | image/gif     | 表明图片格式为GIF(Graphics Interchange Format,图形互换格式)，GIF是一种位图图像格式，支持透明度，支持动画，GIF采用有损压缩，对颜色深度和图像质量的支持相对较低，因此在一些需要更高图像质量的情况下，其他格式如PNG或JPEG可能更为适用。 |
-| avif            | image/avif    | 表明图片格式为AVIF(AV1 Image File Format,AV1图像文件格式)，AVIF可采用无损/有损压缩（压缩比率：20%-50%左右），支持透明度，支持动画，该格式具有更好的压缩效率，在保持图像质量的同时可以实现更小的文件大小。 |
+| jpeg            | image/jpeg    | 表明图片格式为JPEG(Joint Photographic Experts Group,联合图像专家组)，JPEG采用有损压缩，其压缩比率是可调的，可以从轻微压缩到极端压缩，这取决于所需的图像质量和文件大小，它不支持透明度，不支持动画，适用于允许图像质量损失但大小尽可能小的情况。 |
+| png             | image/png     | 表明图片格式为PNG(Portable Network Graphics,便携式网络图形)，PNG采用无损压缩（压缩比率：30%-60%左右），支持透明度，不支持动画，尤其适用于需要高质量图像和透明背景的场景。 |
+| gif             | image/gif     | 表明图片格式为GIF(Graphics Interchange Format,图形互换格式)，GIF是一种位图图像格式，支持透明度，支持动画，GIF使用的是无损压缩技术，但它限制了颜色深度为256色，这可能会导致颜色信息的损失。因此，尽管压缩本身是无损的，色彩限制可能导致视觉上的质量降低，适用于图像质量要求低的简单动画图像的场景。 |
+| avif            | image/avif    | 表明图片格式为AVIF(AV1 Image File Format,AV1图像文件格式)，AVIF可采用无损/有损压缩（压缩比率：20%-50%左右），支持透明度，支持动画，该格式具有更好的压缩效率，在保持图像质量的同时可以实现更小的文件大小，但由于是较新的格式，它的支持和普及程度可能不如其他更成熟的格式。 |
 | webp            | image/webp    | 表明图片格式为webp(Web Picture,网页图片)，webp可采用无损或有损压缩（压缩比率：20%-50%左右），支持透明度，支持动画，由于其出色的压缩性能和良好的图像质量，WebP在网页设计和移动应用程序中得到了广泛的应用。 |
 | svg+xml         | image/svg+xml | 表明图片格式为SVG(Scalable Vector Graphics,可缩放矢量图形)，SVG是一种基于XML（可扩展标记语言）的图像标准，用于描述二维矢量图形。与位图图像（如JPEG、PNG）不同，SVG图像是基于数学方程和几何形状的矢量图形，因此可以无损地缩放到不同的大小而不失真，因此它常用于Web开发中，特别适用于需要在不同分辨率和设备上保持图像质量的情况。 |
 
@@ -131,13 +131,13 @@ MIME 类型为 `image` 的文件包含图像数据。子类型指定数据所代
 
 MIME 类型为 `font` 的文件包含字体数据。子类型指定数据所代表的具体字体文件格式。
 
-| 子类型(subtext) | 完整示例      | 描述                                                                                                                                                                                                                                                                                                                     |
-| --------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| ttf             | font/ttf      | 表明字体格式为TTF(TrueType 字体)，TrueType 是一种矢量字体技术，能够以可伸缩的方式呈现字符，这使得文本在不同大小和分辨率下都能保持清晰。TrueType 字体广泛应用于计算机操作系统和各种应用程序中，用于显示文本内容。                                                                                                         |
-| opentype        | font/opentype | 表明字体格式为OTF（OpenType，开放字体），OpenType 字体是 TrueType 字体的一个扩展，它结合了 TrueType 和 Adobe 的字体技术，并引入了更广泛的字符集、更多样化的字形、对颜色和多彩图案的支持等特性，使其成为一种功能强大且灵活的字体格式被广泛应用在数字设计、印刷和网络排版领域。                                            |
-| woff            | font/woff     | 表明字体格式为WOFF（Web Open Font Format，Web开放字体格式），WOFF 格式设计的目标是在保持字体质量的同时减小文件大小，以提高Web性能。因此这种格式的字体文件通常具有较小的文件大小，能够提供更快的页面加载速度。它支持压缩和元数据的添加，使得字体在网络上的传输更加高效。                                                  |
-| woff2           | font/woff2    | 表明字体格式为WOFF2（Web Open Font Format 2.0，Web开放字体格式2.0），WOFF2 是 WOFF 格式的升级版本，WOFF2 与 WOFF 相比具有更高的压缩效率，能够显著减小字体文件的大小，这种格式在保持字体质量的同时，通过先进的压缩算法实现了更高的性能。由于其出色的压缩能力和广泛的浏览器支持，WOFF2 已经成为在Web开发中推荐的字体格式。 |
-| eot             | font/eot      | 表明字体格式为EOT（Embedded OpenType，嵌入式开放字体），EOT 文件通常包含了字体的元数据和压缩的字体数据，以便在Web页面上有效地嵌入和传输。由于其他浏览器通常支持更通用的字体格式（如TTF、OTF、WOFF等），EOT 在现代Web开发中的使用相对较少，因为它主要是为了满足Internet Explorer的需求。                                  |
+| 子类型(subtext) | 完整示例      | 描述                                                         |
+| --------------- | ------------- | ------------------------------------------------------------ |
+| ttf             | font/ttf      | 表明字体格式为TTF（TrueType Font, 真类型字体）。TrueType 是一种矢量字体技术，能够以可伸缩的方式呈现字符，这使得文本在不同大小和分辨率下都能保持清晰。由于其广泛的兼容性和高质量的文本呈现能力，TrueType 字体被广泛应用于各种操作系统和应用程序中。 |
+| opentype        | font/opentype | 表明字体格式为OTF（OpenType Font, 开放类型字体）。OpenType 字体是一种在 TrueType 和 PostScript 字体技术基础上发展的格式，它支持更广泛的字符集、更多样化的字形变体、以及先进的排版功能。OpenType 字体因其强大的功能和对国际语言的支持而被广泛应用于数字设计、印刷和网络排版领域。 |
+| woff            | font/woff     | 表明字体格式为WOFF（Web Open Font Format, Web开放字体格式）。WOFF 是专为Web设计的字体格式，它通过有效的压缩机制减小文件大小，加快网页加载速度。此格式支持字体的子集化和元数据的添加，使得字体在网络上的传输和使用更加高效。WOFF 字体因其网络友好性和广泛的浏览器支持而在Web开发中被广泛使用。 |
+| woff2           | font/woff2    | 表明字体格式为WOFF2（Web Open Font Format 2.0, Web开放字体格式2.0），WOFF2 是 WOFF 的优化版本，提供了更高的压缩效率。WOFF2 通过先进的压缩算法显著减小了字体文件的大小，同时保持了字体的高质量。它在Web开发中被推荐使用，因为它结合了出色的压缩能力和广泛的浏览器支持。 |
+| eot             | font/eot      | 表明字体格式为EOT（Embedded OpenType, 嵌入式开放类型字体）。EOT 是专为微软的Internet Explorer浏览器设计的字体格式。它支持字体的嵌入和保护，以便在Web页面中有效使用。尽管EOT 提供了一些专有特性，但由于现代浏览器普遍支持更通用的字体格式（如TTF、OTF、WOFF等），EOT 的使用在现代Web开发中变得较为有限。 |
 
 ### 音频类型（audio）
 
@@ -145,17 +145,45 @@ MIME 类型为 `audio` 的文件包含音频数据。子类型指定数据所代
 
 | 子类型(subtext) | 完整示例   | 描述                                                         |
 | --------------- | ---------- | ------------------------------------------------------------ |
-| wav             | audio/wav  | 表明音频格式为WAV（Waveform Audio File Format，波形音频文件格式），WAV 编码没有经过任何形式的数据压缩，它包含了原始音频采样的数字表示。由于这种特性，WAV 文件一般具有较高的音频质量，但相对来说文件大小也较大。此外audio/wave、audio/x-wav、audio/x-pn-wav都是表示该种音频格式。 |
-| flac            | audio/flac | 表明音频格式为FLAC（Free Lossless Audio Codec，免费无损音频编解码器），FLAC使用无损压缩技术（压缩比率: 50%-70% 左右），可以将音频文件压缩至原始大小的一半到三分之一，而不会损失音频质量。这意味着FLAC压缩的音频文件大小相对较小，但仍然保留了原始音频的无损质量。FLAC通常用于音乐存储和传输，以便在需要节省存储空间的同时保持高音质。 |
-| ogg             | audio/ogg  | 表明音频格式为OGG（Ogg Vorbis），Ogg编码采用无损压缩技术（压缩比率：45%-85%），它能够提供高质量的音频文件同时保持较小的文件大小。 |
-| aac             | audio/aac  | 表明音频格式为ACC（Advanced Audio Coding，高级音频编码），AAC编码采用有损压缩（压缩比率: 10%-15% 左右），他能够在相对较低的比特率下保持较高的音频质量，它常被用于数字音频广播、音乐存储以及在线音频流媒体等应用领域，AAC 还是 MPEG-4 标准的一部分。 |
-| mpeg            | audio/mpeg | 表明音频格式为MPEG（Moving Picture Experts Group，视频图像专家组），即MP3，MPEG 提供了一系列标准，每个标准都专注于不同的应用领域。以下是一些主要的 MPEG 标准：<br />1.**MPEG-1**: 制定于1993年，该标准对低比特率下的视频和音频进行了压缩，例如 VCD（Video CD）的标准就采用了 MPEG-1。<br />2.**MPEG-2**: 制定于1995年，用于更高质量的视频传输，例如 DVD 和数字电视广播等。。<br />3.**MPEG-4**: 制定于1999年，是一个更为复杂和灵活的标准，支持更多的交互性、低比特率传输、以及适应性流媒体等特性。MPEG-4 主要用于互联网流媒体、移动视频通信和广播等领域。<br />4.**MPEG-7**: 制定于2001年，是一种描述多媒体内容的标准，关注如何描述、搜索和检索多媒体内容，而不是压缩标准。<br />5.**MPEG-21**:制定于2001年，是一个面向多媒体框架的标准，旨在提供一个完整的多媒体体验环境，包括数字版权管理、内容交互和数字媒体服务等。 |
-| wma             | audio/wma  | 表明音频格式为WMA（Windows Media Audio，Windows 媒体音频），WMA 是由 Microsoft 开发的音频编码格式，旨在提供高质量的音频压缩，同时保持相对较小的文件大小。WMA 文件通常用于存储音乐和其他音频内容，特别是与 Windows Media Player 等 Microsoft 的多媒体软件相兼容。 |
-| webm            | audio/webm | 表明音频格式为WEBM（WebM Project），它是一个由 Google 主导的开放媒体格式，WebM 的文件格式基于 Matroska 容器，视频使用 VP8 或 VP9 编码，音频使用 Vorbis 或 Opus 编码，它在许多 Web 浏览器和其他多媒体应用程序中得到了集成，常用于在线视频平台和其他网络媒体应用。 |
+| wav             | audio/wav  | 表明音频格式为WAV（Waveform Audio File Format，波形音频文件格式）。WAV 通常使用未压缩的线性PCM格式，因此保留了原始音频数据的高质量。这种格式的文件通常较大，适用于专业音频编辑和音乐制作。常见的MIME类型还包括audio/wave、audio/x-wav、audio/x-pn-wav。 |
+| flac            | audio/flac | 表明音频格式为FLAC（Free Lossless Audio Codec，免费无损音频编解码器）。FLAC 采用无损压缩技术，可以在不损失音质的前提下减小文件大小（压缩率约为50%-70%），适用于音乐爱好者和音频专业人士，希望在保持高音质的同时节省存储空间。 |
+| ogg             | audio/ogg  | 表明音频格式为OGG（Ogg Vorbis）。Ogg Vorbis是一种有损压缩格式，以优秀的压缩效率和音质著称（压缩率约为45%-85%）。它是一个开源格式，通常用于流媒体应用和游戏音频，提供高质量的音频输出和较小的文件大小。 |
+| aac             | audio/aac  | 表明音频格式为AAC（Advanced Audio Coding，高级音频编码）。AAC 是一种有损压缩技术，以更高的音频质量和更低的比特率相比MP3著称（压缩率约为10%-15%）。它被广泛用于数字音频广播、音乐存储和在线流媒体等领域，也是MPEG-4标准的一部分。 |
+| mpeg            | audio/mpeg | 表明音频格式为MPEG（Moving Picture Experts Group，视频图像专家组），即MP3。MP3是一种有损音频压缩格式，广泛用于音乐存储和传输，因其出色的压缩效率和广泛的兼容性而深受欢迎。MPEG-1 Layer 3 (MP3)专门针对音频压缩，优化了在保持可接受音质的同时减小文件大小。 |
+| wma             | audio/wma  | 表明音频格式为WMA（Windows Media Audio，Windows媒体音频）。WMA是由Microsoft开发的一种有损压缩格式，旨在优化音频质量和文件大小的平衡。它通常用于Windows平台上的音乐存储和流媒体服务，与Windows Media Player等微软产品兼容。 |
+| webm            | audio/webm | 表明音频格式为WebM（WebM Audio）。WebM是一种有损压缩技术，它能够在较低的比特率下提供高质量的音频体验，实现高视频质量和小文件大小之间的最佳平衡，由于其高效的压缩能力和对网络流媒体友好的特性，WebM格式在在线视频平台和其他网络媒体应用中得到了广泛的应用。 |
 
 ### 视频类型（video）
 
+MIME 类型为 `video` 的文件包含视频数据，子类型指定数据所代表的具体视频文件格式。
+
+| 子类型(subtext) | 完整示例        | 描述                                                         |
+| --------------- | --------------- | ------------------------------------------------------------ |
+| mp4             | video/mp4       | 表明视频格式为MP4（MPEG-4 Part 14），使用有损压缩技术，压缩比率因编码器和设置而异，但通常能提供高压缩效率。支持视频、音频流、字幕等，广泛应用于网络传输和播放设备，适合平衡高质量和文件大小。 |
+| webm            | video/webm      | 表明视频格式为WebM，采用VP8或VP9视频编码和Vorbis或Opus音频编码。WebM的压缩比率较高，尤其是采用VP9时，更适合于在线视频，为网络流媒体和视频服务优化，以减少文件大小并保持高质量视频输出。 |
+| ogg             | video/ogg       | 表明视频格式为Ogg。使用Theora视频编码，是一种开源的有损视频压缩技术。Ogg格式的压缩比率良好，适用于确保开放标准和避免专利费用的应用场景。 |
+| avi             | video/x-msvideo | 表明视频格式为AVI（Audio Video Interleave）。AVI格式支持多种编码方法，包括无损和有损压缩，压缩比率取决于使用的具体编码器。虽然AVI文件可以较大，但它提供了良好的兼容性和简单的视频编辑功能。 |
+| quicktime       | video/quicktime | 表明视频格式为QuickTime，由苹果公司开发。支持多种类型的数字视频和音频数据压缩，压缩比率取决于所选编解码器。QuickTime格式适用于高质量视频的制作和编辑。 |
+| mpeg            | video/mpeg      | 表明视频格式为MPEG（Moving Picture Experts Group）。MPEG定义了包括MPEG-1和MPEG-2的视频压缩标准，提供了高压缩比率，优化了高质量视频的存储和传输，广泛应用于电视广播和DVD。 |
+
 ### 二进制数据类型（application）
+
+MIME 类型为 `application` 表明不明确属于其他类型之一的任何二进制数据，子类型表明是哪一种二进制数据。
+
+| 子类型(subtext)       | 完整示例                          | 描述                                                         |
+| --------------------- | --------------------------------- | ------------------------------------------------------------ |
+| octet-stream          | application/octet-stream          | 这是一种默认的MIME类型，用于表示这是未知类型的二进制数据，通常用于下载或上传未知类型的文件。 |
+| json                  | application/json                  | 表明二进制数据为JSON（JavaScript Object Notation，JavaScript 对象表示法），JSON用于表示结构化数据。它广泛用于网络应用程序中，作为数据交换的标准格式。 |
+| x-www-form-urlencoded | application/x-www-form-urlencoded | 这是HTML表单提交时使用的默认编码类型，该类型会将表单数据编码成一个查询字符串格式的消息体，具体编码方式如下：<br />**1.空格转换为加号（+）**：表单数据中的空格字符会被替换为加号。<br />**2.特殊字符转换为百分比编码**：非字母数字字符会被转换成 `%` 后跟两位十六进制数，<br />**3.键值对**：表单中的每个字段（键）和其对应值使用等号（`=`）连接。<br />**4.字段分隔**：多个键值对之间使用 `&` 符号分隔。 |
+| xml                   | application/xml                   | 表明二进制数据为XML文件                                      |
+| xhtml+xml             | application/xhtml+xml             | 表明二进制数据为XHTML文件                                    |
+| javascript            | application/javascript            | 表明二进制数据为javascript文件                               |
+| pdf                   | application/pdf                   | 表明二进制数据为PDF文件                                      |
+| zip                   | application/zip                   | 表明二进制数据为ZIP压缩文件                                  |
+| msword                | application/msword                | 用于Microsoft Word文档的文件格式。虽然现在常见的是`.docx`格式（`application/vnd.openxmlformats-officedocument.wordprocessingml.document`），但`.doc`仍然广泛使用 |
+| vnd.ms-excel          | application/vnd.ms-excel          | 用于Microsoft Excel表格的文件格式。虽然现在常见的是`.xlsx`格式（`application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`），但`.xls`仍然广泛使用 |
+| vnd.ms-powerpoint     | application/vnd.ms-powerpoint     | 用于Microsoft PowerPoint演示文稿的文件格式。虽然现在常见的是`.pptx`格式（`application/vnd.openxmlformats-officedocument.presentationml.presentation`），但`.ptt`仍然广泛使用 |
+| event-stream          | application/event-stream          | event-stream是一个特定的 MIME 类型，用于服务器发送事件（SSE，Server-Sent Events）。 |
 
 ### 多部分数据类型（multipart）
 
