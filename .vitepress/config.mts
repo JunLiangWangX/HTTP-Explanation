@@ -12,7 +12,9 @@ export default withPwa(defineConfig({
     },   
     plugins: [SearchPlugin({
       preset:'score',
-      tokenize:'full'
+      tokenize:'full',
+      buttonLabel: "搜索",
+      placeholder: "输入搜索内容",
     })]
   },
   buildEnd: ({ outDir }) => {
