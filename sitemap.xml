@@ -1,1 +1,131 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"><url><loc>https://wangjunliang.com/HTTP-Explanation/404</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/authentication-strategy/authorization</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/authentication-strategy/cookie</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/content-negotiation/client-hints</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/content-negotiation/condition-request</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/content-negotiation/content-negotiation</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/content-negotiation/range-request</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/other/mime-type</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/overview/http-message-format</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/overview/the-history-of-http</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/performance-optimization-strategy/data-compression</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/performance-optimization-strategy/http-cache</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/performance-optimization-strategy/long-connection-and-short-connection</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/security-strategy/common-attack-and-protection-methods</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/security-strategy/content-security-policy</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/security-strategy/cross-origin-resource-sharing</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/security-strategy/rescue-insecure-http-https</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>https://wangjunliang.com/HTTP-Explanation/docs/security-strategy/same-origin-policy</loc><lastmod>2024-01-16T14:29:06.811Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+       <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+       
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/authentication-strategy/authorization</loc>
+         <lastmod>2024-01-06T4:28:00 PMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/authentication-strategy/cookie</loc>
+         <lastmod>2024-01-06T4:30:10 PMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/content-negotiation/client-hints</loc>
+         <lastmod>2024-01-06T4:36:34 PMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/content-negotiation/condition-request</loc>
+         <lastmod>2024-01-07T7:36:49 AMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/content-negotiation/content-negotiation</loc>
+         <lastmod>2024-01-07T7:39:52 AMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/content-negotiation/range-request</loc>
+         <lastmod>2024-01-07T7:43:00 AMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/other/mime-type</loc>
+         <lastmod>2024-01-15T1:58:29 PMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/other/url</loc>
+         <lastmod>2024-01-17T7:28:25 AMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/overview/http-message-format</loc>
+         <lastmod>2024-01-07T7:46:00 AMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/overview/the-history-of-http</loc>
+         <lastmod>2024-01-07T7:54:48 AMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/performance-optimization-strategy/data-compression</loc>
+         <lastmod>2024-01-07T8:06:58 AMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/performance-optimization-strategy/http-cache</loc>
+         <lastmod>2024-01-07T8:09:38 AMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/performance-optimization-strategy/long-connection-and-short-connection</loc>
+         <lastmod>2024-01-07T8:13:48 AMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/security-strategy/common-attack-and-protection-methods</loc>
+         <lastmod>2024-01-07T8:16:23 AMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/security-strategy/content-security-policy</loc>
+         <lastmod>2024-01-07T8:19:20 AMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/security-strategy/cross-origin-resource-sharing</loc>
+         <lastmod>2024-01-07T8:21:34 AMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/security-strategy/rescue-insecure-http-https</loc>
+         <lastmod>2024-01-07T8:24:10 AMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/security-strategy/same-origin-policy</loc>
+         <lastmod>2024-01-07T8:26:08 AMZ</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       </urlset>
+     
