@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 import { withPwa } from '@vite-pwa/vitepress'
 import { SearchPlugin } from "vitepress-plugin-search"
-import { generateSitemap as sitemap } from 'sitemap-ts'
-
+import fs from 'fs';
+import spawn from 'cross-spawn';
 // https://vitepress.dev/reference/site-config
 export default withPwa(defineConfig({
   vite: {
@@ -17,8 +17,41 @@ export default withPwa(defineConfig({
       placeholder: "输入搜索内容",
     })]
   },
-  buildEnd: ({ outDir }) => {
-    sitemap({ hostname: 'https://wangjunliang.com/HTTP-Explanation/', basePath: 'HTTP-Explanation', outDir })
+  buildEnd: ( siteConfig) => {
+    
+   // sitemap({ hostname: 'https://wangjunliang.com/HTTP-Explanation/', basePath: 'HTTP-Explanation', outDir })
+   const baseURL = 'https://wangjunliang.com/HTTP-Explanation';
+
+   try {
+     let siteMapStr = '';
+     for (const page of siteConfig.pages) {
+       if (page === 'index.md') continue;
+       // 获取最后修改日期，基于git
+       const filePath = siteConfig.srcDir + '/' + page;
+       const date = new Date(
+         parseInt(
+           spawn.sync('git', ['log', '-1', '--format=%at', filePath]).stdout.toString('utf-8')
+         ) * 1000
+       );
+       siteMapStr += `
+       <url>
+         <loc>${baseURL}/${page.replace(/\.md$/, '')}</loc>
+         <lastmod>${date.getFullYear()}-${(date.getMonth() + 1)<10?'0'+(date.getMonth() + 1):(date.getMonth() + 1)}-${date.getDate()<10?'0'+date.getDate():date.getDate()}T${date.toLocaleTimeString()}Z</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     `;
+     }
+
+     const xmlStr = `<?xml version="1.0" encoding="UTF-8"?>
+       <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+       ${siteMapStr}
+       </urlset>
+     `;
+     fs.writeFileSync(`${siteConfig.outDir}/sitemap.xml`, xmlStr);
+   } catch (err) {
+     console.log('create sitemap.txt failed!', err);
+   }
   },
   title: "HTTP完全注释",
   description: "HTTP完全注释",
@@ -160,6 +193,8 @@ export default withPwa(defineConfig({
         text: '其他',
         items: [{
           text: 'MIME类型', link: '/docs/other/mime-type'
+        },{
+          text: 'URL', link: '/docs/other/url'
         },]
       }
     ],
