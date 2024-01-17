@@ -36,7 +36,7 @@ export default withPwa(defineConfig({
        siteMapStr += `
        <url>
          <loc>${baseURL}/${page.replace(/\.md$/, '')}</loc>
-         <lastmod>${date.getFullYear()}-${(date.getMonth() + 1)<10?'0'+(date.getMonth() + 1):(date.getMonth() + 1)}-${date.getDate()<10?'0'+date.getDate():date.getDate()}T${date.toLocaleTimeString()}Z</lastmod>
+         <lastmod>${date.toISOString()}</lastmod>
          <changefreq>weekly</changefreq>
          <priority>1.0</priority> 
        </url>
