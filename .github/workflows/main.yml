@@ -28,13 +28,14 @@ jobs:
           github_token: ${{ secrets.SECRET }}
           publish_dir: ./public
           enable_jekyll: false
-          
+
       - if: ${{ github.event_name == 'push' && success() }}
         name: deploy file to server
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4 
-        with:  
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_IP }}
           username: 'root'
-          server: '${{ secrets.SERVER_IP }}'
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} # 引用之前创建好的secret
-          local_path: './public/*'
-          remote_path: '/home/www/htdocs/wangjunliang/HTTP-Explanation'
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: './public/*'
+          target: "/home/www/htdocs/wangjunliang/HTTP-Explanation/"
+          strip_components: 1
