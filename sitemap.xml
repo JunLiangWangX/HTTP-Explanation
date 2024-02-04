@@ -44,6 +44,13 @@
        </url>
      
        <url>
+         <loc>https://wangjunliang.com/HTTP-Explanation/docs/introduc/introduc</loc>
+         <lastmod>2024-02-04T14:08:19.000Z</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority> 
+       </url>
+     
+       <url>
          <loc>https://wangjunliang.com/HTTP-Explanation/docs/other/mime-type</loc>
          <lastmod>2024-01-15T13:58:29.000Z</lastmod>
          <changefreq>weekly</changefreq>
