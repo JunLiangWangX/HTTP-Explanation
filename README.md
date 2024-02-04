@@ -1,8 +1,6 @@
-<p align="center"><img src='./resource/title.svg'></p>
+# HTTP-Explanation
 
-<p align="center">
-    <a href="https://wangjunliang.com/HTTP-Explanation/"><img src='./resource/domestic-site-btn.svg'></a>
-    <a href="https://wangjunliang.com/HTTP-Explanation/"><img src='./resource/foreign-site-btn.svg'></a>
-</p>
+A comprehensive, centralized, and accurate guide to HTTP
 
+[Click to View](https://wangjunliang.com/HTTP-Explanation)
 
