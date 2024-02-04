@@ -132,6 +132,14 @@ export default withPwa(defineConfig({
     ],
     sidebar: [
       {
+        text: '前言',
+        items: [
+          {
+            text: '这是一份最强HTTP指南', link: '/docs/introduc/introduc'
+          }
+        ]
+      },
+      {
         text: '概述',
         items: [
           {
