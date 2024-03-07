@@ -35,7 +35,7 @@ export default withPwa(defineConfig({
        );
        siteMapStr += `
        <url>
-         <loc>${baseURL}/${page.replace(/\.md$/, '')}</loc>
+         <loc>${baseURL}/${page.replace(/\.md$/, '.html')}</loc>
          <lastmod>${date.toISOString()}</lastmod>
          <changefreq>weekly</changefreq>
          <priority>1.0</priority> 
@@ -127,6 +127,7 @@ export default withPwa(defineConfig({
       pattern: 'https://github.com/JunLiangWangX/HTTP-Explanation/edit/main/src/:path'
     },
     nav: [
+      { text: '关注作者', link: 'https://wangjunliang.com/wechat' },
       { text: '支持作者', link: 'https://wangjunliang.com/#/supportBloggers' },
       { text: '了解作者', link: 'https://wangjunliang.com/' },
     ],
