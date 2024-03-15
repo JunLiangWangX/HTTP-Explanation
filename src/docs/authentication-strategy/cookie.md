@@ -157,6 +157,17 @@ Cookie: PHPSESSID=298zf09hf012fh2; csrftoken=u32t4o3tb3gg43; _gat=1
 
 
 
+## Cookie的限制
+
+**不同的浏览器对Cookie的数量和大小都有一定的限制**，以下是一些常见浏览器对Cookie数量和大小的限制：
+
+-   IE：每个域名限制50个Cookie，每个Cookie的大小限制为4KB。
+-   Chrome：每个域名限制180个Cookie，每个Cookie的大小限制为4KB。
+-   Firefox：每个域名限制50个Cookie，每个Cookie的大小限制为4KB。
+-   Safari：每个域名限制50个Cookie，每个Cookie的大小限制为4KB。
+
+这些限制是基于常见的浏览器设置，但实际情况可能会因浏览器版本、配置或用户设置而有所不同。因此，在**进行页面Cookie操作时，确保Cookie的个数少于20个，总大小小于4KB是一个合理的目标，可以确保兼容性和性能**。
+
 
 
 ## 第三方Cookie
